@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gooning</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>Hmmmmm</h1>
+
+    <section class="upload-section">
+      <label for="video-upload">Upload Video:</label>
+      <input type="file" id="video-upload" accept="video/*" />
+      <div id="preview-wrapper">
+        <video id="video-preview" controls></video>
+      </div>
+    </section>
+
+    <section class="text-overlay-section">
+      <h2>Text Overlay</h2>
+      <textarea id="text-input" placeholder="Enter each clip’s text, separated by &#10;&#10;"></textarea>
+      <div id="editor-area">
+        <div id="text-box" class="draggable resizable">
+          <div id="text-content" contenteditable="true">Sample Text</div>
+        </div>
+      </div>
+      <div class="controls">
+        <label>Font Size: <input type="number" id="font-size" min="8" max="200" value="40"/></label>
+        <label>Rotation: <input type="number" id="rotation" min="0" max="360" value="0"/></label>
+        <label>Alignment:
+          <select id="alignment">
+            <option>left</option>
+            <option>center</option>
+            <option>right</option>
+          </select>
+        </label>
+      </div>
+    </section>
+
+    <section class="export-section">
+      <button id="generate-btn">Generate Videos</button>
+      <div id="progress"></div>
+      <p id="count-display"></p>
+      <select id="clip-selector"></select>
+      <div id="downloads"></div>
+    </section>
+  </div>
+
+  <script src="https://unpkg.com/@ffmpeg/ffmpeg@0.11.11/dist/ffmpeg.min.js"></script>
+  <script type="module" src="extra.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
